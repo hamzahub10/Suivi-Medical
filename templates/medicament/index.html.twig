@@ -1,0 +1,43 @@
+{% extends "baseback.html.twig" %}
+
+{% block title %}Medicament index{% endblock %}
+
+{% block content %}
+    <h1>Medicament index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Fabricant</th>
+                <th>Duree_conservation</th>
+                <th>Forme</th>
+                <th>Gamme</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for medicament in medicaments %}
+            <tr>
+                <td>{{ medicament.id }}</td>
+                <td>{{ medicament.libelle }}</td>
+                <td>{{ medicament.fabricant }}</td>
+                <td>{{ medicament.dureeConservation }}</td>
+                <td>{{ medicament.forme }}</td>
+                <td>{{ medicament.gamme }}</td>
+                <td>
+                    <a href="{{ path('app_medicament_show', {'id': medicament.id}) }}">show</a>
+                    <a href="{{ path('app_medicament_edit', {'id': medicament.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_medicament_new') }}">Create new</a>
+{% endblock %}

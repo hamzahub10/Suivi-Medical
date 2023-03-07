@@ -1,0 +1,28 @@
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+<table>
+    <tr>
+        <td>{{ form_label(form.date,"Date") }}</td>
+        <td>{{ form_widget(form.date) }}</td>
+        <td>{{ form_errors(form.date) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_label(form.nb_paquet,"Nombre de paquets") }}</td>
+        <td>{{ form_widget(form.nb_paquet) }}</td>
+        <td>{{ form_errors(form.nb_paquet) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_label(form.dosage,"Dosage") }}</td>
+        <td>{{ form_widget(form.dosage) }}</td>
+        <td>{{ form_errors(form.dosage) }}</td>
+    </tr>
+
+    <tr>
+        <td>{{ form_label(form.remarque,"Instructions") }}</td>
+        <td>{{ form_widget(form.remarque) }}</td>
+        <td>{{ form_errors(form.remarque) }}</td>
+    </tr>
+
+</table>
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
