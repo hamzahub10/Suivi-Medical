@@ -1,0 +1,23 @@
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+<table>
+    <tr>
+        <td>{{ form_label(form.date,"Date") }}</td>
+        <td>{{ form_widget(form.date) }}</td>
+        <td>{{ form_errors(form.date) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_label(form.heure,"Heure") }}</td>
+        <td>{{ form_widget(form.heure) }}</td>
+        <td>{{ form_errors(form.heure) }}</td>
+    </tr>
+
+    <tr>
+        <td>{{ form_label(form.confirmation,"Confirmation") }}</td>
+        <td>{{ form_widget(form.confirmation) }}</td>
+        <td>{{ form_errors(form.confirmation) }}</td>
+    </tr>
+
+</table>
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
